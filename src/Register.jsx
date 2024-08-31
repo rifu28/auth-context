@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
   const handleRegister = (e) => {
@@ -7,7 +9,17 @@ const Register = () => {
     const password = e.target.password.value;
     const name = e.target.name.value;
     console.log(email, password, name);
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .then((error) => {
+        console.log(error.message);
+      });
   };
+
+  const { createUser } = useContext(AuthContext);
+
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
