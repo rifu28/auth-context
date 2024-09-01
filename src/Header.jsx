@@ -24,6 +24,9 @@ const Header = () => {
       <li>
         <NavLink to="/register">Register</NavLink>
       </li>
+      <li>
+        <NavLink to="/orders">Order Now</NavLink>
+      </li>
     </>
   );
   return (
